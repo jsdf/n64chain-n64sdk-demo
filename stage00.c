@@ -6,6 +6,7 @@
 #include "main.h"
 #include "stage00.h"
 #include "n64logo.h"
+#include "game.h"
 
 
 Vec3d cameraPos = {-200.0f, -200.0f, -200.0f};
@@ -58,6 +59,7 @@ void initStage00() {
 
 // the 'update' function
 void updateGame00() {
+  Game_update();
   // read controller input from controller 1 (index 0)
   nuContDataGetEx(contdata, 0);
   // We check if the 'A' Button was pressed using a bitwise AND with
