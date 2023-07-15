@@ -1,7 +1,8 @@
 #!/bin/bash
-set -eu
+set -eux
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 rm -f *.o
-./build_modern.sh
-wine cmd /c $DIR/compile.bat
+ 
+wine cmd /c compile.bat
+

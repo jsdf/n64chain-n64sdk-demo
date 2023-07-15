@@ -29,9 +29,9 @@ TARGETS =	squaresdemo.n64
 
 HFILES =	graphic.h
 
-CODEFILES   = 	main.c stage00.c graphic.c gfxinit.c
+CODEFILES   = 	main.c stage00.c graphic.c gfxinit.c game.c
 
-CODEOBJECTS =	$(CODEFILES:.c=.o)  $(NUSYSLIBDIR)/nusys.o game.o
+CODEOBJECTS =	$(CODEFILES:.c=.o)  $(NUSYSLIBDIR)/nusys.o
 
 DATAFILES   =	
 
@@ -46,10 +46,10 @@ default:        $(TARGETS)
 
 include $(COMMONRULES)
 
-$(CODESEGMENT):	$(CODEOBJECTS) Makefile
+$(CODESEGMENT):	$(CODEOBJECTS)
 		$(LD) -o $(CODESEGMENT) -r $(CODEOBJECTS) $(LDFLAGS)
 
 $(TARGETS):	$(OBJECTS)
 		$(MAKEROM) spec -I$(NUSYSINCDIR) -r $(TARGETS) -e $(APP)
 		makemask $(TARGETS)
-		
+

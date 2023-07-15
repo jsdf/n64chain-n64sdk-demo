@@ -7,6 +7,4 @@ call setup.bat
 
 %startdrive%
 cd %startpath%
-@echo "aaaaa"
-exew32 make
-@echo "aaaaa"
+exew32 makemask %TARGETS%

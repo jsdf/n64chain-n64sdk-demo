@@ -84,3 +84,7 @@ DerivedData/
 
 *.sublime-project
 *.sublime-workspace
+
+
+*.dasm
+*disasm.txt
